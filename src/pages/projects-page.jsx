@@ -40,7 +40,7 @@ function ProjectsPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-24">
       <div className="text-center mb-8 md:mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold">Projects</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[#ffe928]">Projects</h1>
         <p className="mt-2 text-muted-foreground">
           제가 작업한 모든 프로젝트를 확인해보세요
         </p>
