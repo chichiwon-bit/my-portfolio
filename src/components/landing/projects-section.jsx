@@ -9,6 +9,16 @@ const products = [
 ];
 
 /**
+ * 고정 불규칙 레이아웃 (새로고침해도 동일, JS random 미사용)
+ * Tailwind 반응형 클래스로 desktop/mobile 분기
+ */
+const ITEM_LAYOUTS = [
+  'ml-[28%] w-[68%] md:ml-[50%] md:w-[38%] mb-16 md:mb-24',
+  'ml-[2%]  w-[86%] md:ml-[4%]  md:w-[46%] mb-24 md:mb-28',
+  'ml-[22%] w-[62%] md:ml-[36%] md:w-[30%] mb-0',
+];
+
+/**
  * ProjectsSection 컴포넌트 (SHOP 섹션)
  *
  * Props:
@@ -30,29 +40,32 @@ function ProjectsSection({ className }) {
         Shop
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
-        {products.map((product) => (
-          <div key={product.id} className="cursor-pointer group">
-            <div className="aspect-square overflow-hidden mb-4">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
+      <div className="relative overflow-hidden">
+        {products.map((product, index) => (
+          <div
+            key={product.id}
+            className={`cursor-pointer group ${ITEM_LAYOUTS[index]}`}
+          >
+              <div className="aspect-square overflow-hidden mb-4">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <p
+                className="text-[10px] tracking-[0.2em] text-stone-900 uppercase mb-1"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
+                {product.name}
+              </p>
+              <p
+                className="text-[10px] text-stone-500"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
+                {product.price}
+              </p>
             </div>
-            <p
-              className="text-[10px] tracking-[0.2em] text-stone-900 uppercase mb-1"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {product.name}
-            </p>
-            <p
-              className="text-[10px] text-stone-500"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
-              {product.price}
-            </p>
-          </div>
         ))}
       </div>
     </section>
