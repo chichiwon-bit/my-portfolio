@@ -26,7 +26,7 @@ function Navigation({ className }) {
       )}
     >
       <div className="container flex h-14 items-center justify-between mx-auto px-4">
-        <div className="font-bold text-xl text-primary">토곡도예</div>
+        <div className="font-bold text-xl text-primary">Togok Pottery</div>
         <div className="flex items-center space-x-6">
           {navItems.map((item) => (
             <NavLink
