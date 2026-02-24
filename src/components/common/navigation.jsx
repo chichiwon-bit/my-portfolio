@@ -26,14 +26,14 @@ function Navigation({ className }) {
         </div>
 
         {/* 중앙 로고 */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex flex-col justify-center items-center w-20 md:w-auto">
+        <div className="w-1/3 flex flex-col justify-center items-center">
           <NavLink
             to="/"
-            className="text-xs md:text-sm tracking-[0.25em] font-light text-stone-900 hover:text-stone-600 transition-colors uppercase text-center"
-            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: '1rem', letterSpacing: '0.3em' }}
+            className="text-[0.65rem] md:text-[1rem] tracking-[0.1em] md:tracking-[0.3em] font-light text-stone-900 hover:text-stone-600 transition-colors uppercase text-center"
+            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
           >
             <span className="block md:inline">Togok</span>
-            <span className="block md:inline md:ml-2">Pottery</span>
+            <span className="block md:inline md:ml-1">Pottery</span>
           </NavLink>
         </div>
 
