@@ -46,7 +46,7 @@ function ProjectsSection({ className, limit = 4 }) {
   return (
     <section className={`py-12 md:py-24 ${className || ''}`}>
       <div className="text-center mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#ffe928]">Projects</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-primary">Projects</h2>
         <p className="mt-2 text-muted-foreground">
           제가 작업한 프로젝트들입니다
         </p>

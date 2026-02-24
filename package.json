@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://chichiwon-bit.github.io/my-portfolio-2025",
+  "homepage": "https://togok-pottery.shop",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

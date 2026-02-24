@@ -101,19 +101,19 @@ function ContactSection({ className }) {
   return (
     <section id="contact" className={`py-12 md:py-24 ${className || ''}`}>
       {/* 섹션 타이틀 */}
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-primary">
         Contact
       </h2>
 
       {/* 연락처 카드 */}
-      <Card className="mb-8 border-gray-200 bg-white">
+      <Card className="mb-8">
         <CardContent className="p-6 md:p-8">
           {/* 이메일 */}
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Mail className="w-5 h-5 text-gray-600" />
+            <Mail className="w-5 h-5 text-muted-foreground" />
             <a
               href="mailto:contact@example.com"
-              className="text-gray-700 hover:text-gray-900 transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               contact@example.com
             </a>
@@ -127,10 +127,10 @@ function ContactSection({ className }) {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                className="p-2 rounded-full bg-secondary hover:bg-muted transition-colors"
                 aria-label={social.label}
               >
-                <social.icon className="w-5 h-5 text-gray-700" />
+                <social.icon className="w-5 h-5 text-foreground" />
               </a>
             ))}
           </div>
@@ -138,18 +138,18 @@ function ContactSection({ className }) {
       </Card>
 
       {/* 방명록 섹션 */}
-      <Card className="border-gray-200 bg-white">
+      <Card>
         <CardContent className="p-6 md:p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
-            Guestbook
+          <h3 className="text-xl font-semibold text-primary mb-6 text-center">
+            방명록
           </h3>
 
           {/* 방명록 작성 폼 */}
           <form onSubmit={handleSubmit} className="mb-8 space-y-4">
             {/* 이름 (필수) */}
             <div>
-              <label htmlFor="authorName" className="block text-sm font-medium text-gray-700 mb-1">
-                이름 <span className="text-red-500">*</span>
+              <label htmlFor="authorName" className="block text-sm font-medium text-foreground mb-1">
+                이름 <span className="text-destructive">*</span>
               </label>
               <input
                 type="text"
@@ -159,14 +159,14 @@ function ContactSection({ className }) {
                 onChange={handleInputChange}
                 placeholder="이름을 입력하세요"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white text-gray-900"
+                className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
               />
             </div>
 
             {/* 메시지 (필수) */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                메시지 <span className="text-red-500">*</span>
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
+                메시지 <span className="text-destructive">*</span>
               </label>
               <textarea
                 id="message"
@@ -176,14 +176,14 @@ function ContactSection({ className }) {
                 placeholder="메시지를 남겨주세요"
                 required
                 rows={3}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent resize-none bg-white text-gray-900"
+                className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none bg-background text-foreground"
               />
             </div>
 
             {/* 직업 (선택) */}
             <div>
-              <label htmlFor="occupation" className="block text-sm font-medium text-gray-700 mb-1">
-                직업 <span className="text-gray-400">(선택)</span>
+              <label htmlFor="occupation" className="block text-sm font-medium text-foreground mb-1">
+                직업 <span className="text-muted-foreground">(선택)</span>
               </label>
               <input
                 type="text"
@@ -192,14 +192,14 @@ function ContactSection({ className }) {
                 value={formData.occupation}
                 onChange={handleInputChange}
                 placeholder="직업 또는 소속"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white text-gray-900"
+                className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
               />
             </div>
 
             {/* 이메일 (선택) */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                이메일 <span className="text-gray-400">(선택)</span>
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
+                이메일 <span className="text-muted-foreground">(선택)</span>
               </label>
               <input
                 type="email"
@@ -208,7 +208,7 @@ function ContactSection({ className }) {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="이메일 주소"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white text-gray-900"
+                className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
               />
             </div>
 
@@ -221,9 +221,9 @@ function ContactSection({ className }) {
                   name="isEmailPublic"
                   checked={formData.isEmailPublic}
                   onChange={handleInputChange}
-                  className="w-4 h-4 text-gray-600 border-gray-300 rounded focus:ring-gray-400"
+                  className="w-4 h-4 text-primary border-border rounded focus:ring-primary"
                 />
-                <label htmlFor="isEmailPublic" className="text-sm text-gray-600">
+                <label htmlFor="isEmailPublic" className="text-sm text-muted-foreground">
                   이메일을 공개합니다
                 </label>
               </div>
@@ -233,7 +233,7 @@ function ContactSection({ className }) {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gray-900 hover:bg-gray-800 text-white"
+              className="w-full bg-primary hover:bg-accent text-primary-foreground"
             >
               {isSubmitting ? (
                 '작성 중...'
@@ -249,34 +249,34 @@ function ContactSection({ className }) {
           {/* 방명록 목록 */}
           <div className="space-y-4">
             {isLoading ? (
-              <p className="text-center text-gray-500 py-8">불러오는 중...</p>
+              <p className="text-center text-muted-foreground py-8">불러오는 중...</p>
             ) : guestbookEntries.length === 0 ? (
-              <p className="text-center text-gray-500 py-8">
+              <p className="text-center text-muted-foreground py-8">
                 아직 방명록이 없습니다. 첫 번째 방명록을 남겨주세요!
               </p>
             ) : (
               guestbookEntries.map((entry) => (
                 <div
                   key={entry.id}
-                  className="p-4 border border-gray-200 rounded-lg bg-gray-50"
+                  className="p-4 border border-border rounded-lg bg-secondary"
                 >
                   {/* 작성자 정보 */}
                   <div className="flex items-center gap-2 mb-2">
-                    <User className="w-4 h-4 text-gray-500" />
-                    <span className="font-medium text-gray-900">{entry.author_name}</span>
+                    <User className="w-4 h-4 text-muted-foreground" />
+                    <span className="font-medium text-foreground">{entry.author_name}</span>
                     {entry.occupation && (
                       <>
-                        <Briefcase className="w-4 h-4 text-gray-400 ml-2" />
-                        <span className="text-sm text-gray-600">{entry.occupation}</span>
+                        <Briefcase className="w-4 h-4 text-muted-foreground ml-2" />
+                        <span className="text-sm text-muted-foreground">{entry.occupation}</span>
                       </>
                     )}
                   </div>
 
                   {/* 메시지 */}
-                  <p className="text-gray-700 mb-2 whitespace-pre-wrap">{entry.message}</p>
+                  <p className="text-foreground mb-2 whitespace-pre-wrap">{entry.message}</p>
 
                   {/* 하단 정보 */}
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       <span>{formatDate(entry.created_at)}</span>
@@ -286,7 +286,7 @@ function ContactSection({ className }) {
                         <Mail className="w-3 h-3" />
                         <a
                           href={`mailto:${entry.email}`}
-                          className="hover:text-gray-700 transition-colors"
+                          className="hover:text-primary transition-colors"
                         >
                           {entry.email}
                         </a>

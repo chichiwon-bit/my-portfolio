@@ -4,58 +4,60 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Terracotta & Ivory 테마 - 라이트 모드 */
+    --background: 36 50% 97%;           /* 아이보리 배경 #FAF6F0 */
+    --foreground: 24 30% 20%;           /* 따뜻한 다크 브라운 */
+    --card: 30 40% 95%;                 /* 크림색 카드 #F5EDE4 */
+    --card-foreground: 24 30% 20%;
+    --popover: 30 40% 95%;
+    --popover-foreground: 24 30% 20%;
+    --primary: 18 55% 50%;              /* 테라코타 #C2703D */
+    --primary-foreground: 36 50% 97%;
+    --secondary: 30 30% 90%;            /* 연한 베이지 */
+    --secondary-foreground: 24 30% 25%;
+    --muted: 30 25% 88%;                /* 뮤트 베이지 */
+    --muted-foreground: 24 15% 45%;
+    --accent: 24 45% 35%;               /* 진한 갈색 액센트 */
+    --accent-foreground: 36 50% 97%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 36 50% 97%;
+    --border: 30 25% 85%;
+    --input: 30 25% 85%;
+    --ring: 18 55% 50%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 18 55% 50%;
+    --chart-2: 30 45% 60%;
+    --chart-3: 24 35% 40%;
+    --chart-4: 36 50% 70%;
+    --chart-5: 12 60% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* Terracotta & Ivory 테마 - 다크 모드 */
+    --background: 24 25% 12%;           /* 따뜻한 다크 배경 */
+    --foreground: 36 40% 90%;           /* 밝은 아이보리 텍스트 */
+    --card: 24 20% 16%;                 /* 다크 카드 */
+    --card-foreground: 36 40% 90%;
+    --popover: 24 20% 16%;
+    --popover-foreground: 36 40% 90%;
+    --primary: 18 50% 55%;              /* 밝은 테라코타 */
+    --primary-foreground: 24 25% 12%;
+    --secondary: 24 20% 22%;
+    --secondary-foreground: 36 40% 90%;
+    --muted: 24 15% 25%;
+    --muted-foreground: 30 20% 60%;
+    --accent: 18 45% 45%;
+    --accent-foreground: 36 40% 90%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 36 40% 90%;
+    --border: 24 15% 25%;
+    --input: 24 15% 25%;
+    --ring: 18 50% 55%;
+    --chart-1: 18 55% 55%;
+    --chart-2: 30 45% 50%;
+    --chart-3: 24 35% 45%;
+    --chart-4: 36 50% 60%;
+    --chart-5: 12 60% 50%;
   }
 }
 
@@ -64,7 +66,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
