@@ -15,12 +15,25 @@ import ContactSection from '../components/landing/contact-section';
  */
 function HomePage() {
   return (
-    <div className="container mx-auto px-4">
-      <HeroSection />
-      <AboutSection />
-      <SkillSection />
-      <ProjectsSection />
-      <ContactSection />
+    <div
+      style={{
+        backgroundImage: 'url(/bg-home.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* 오버레이 */}
+      <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.45)' }}>
+        <div className="container mx-auto px-4">
+          <HeroSection />
+          <AboutSection />
+          <SkillSection />
+          <ProjectsSection />
+          <ContactSection />
+        </div>
+      </div>
     </div>
   );
 }
