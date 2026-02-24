@@ -23,7 +23,7 @@ function AboutPage() {
 
             {/* 프로필 사진 영역 */}
             <div className="flex-shrink-0">
-              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border border-border">
+              <div className="w-44 h-44 md:w-56 md:h-56 rounded-lg overflow-hidden border border-border">
                 <img
                   src={profileImg}
                   alt="토곡포터리 프로필"
