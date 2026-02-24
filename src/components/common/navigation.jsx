@@ -19,14 +19,14 @@ function Navigation({ className }) {
       style={{ backgroundColor: '#F2EDE4' }}
     >
       <div className="relative flex h-auto min-h-[3rem] md:h-12 items-center justify-between px-3 md:px-12 py-2 md:py-0">
-        {/* 좌측 */}
-        <div className="flex items-center space-x-2 md:space-x-8 w-1/3">
-          <NavLink to="/projects" className={linkClass}>Shop</NavLink>
+        {/* 좌측: STUDIO, PHILOSOPHY */}
+        <div className="flex items-center space-x-4 md:space-x-8 w-[40%] md:w-1/3">
           <NavLink to="/about" className={linkClass}>Studio</NavLink>
+          <NavLink to="/about" className={linkClass}>Philosophy</NavLink>
         </div>
 
         {/* 중앙 로고 */}
-        <div className="w-1/3 flex flex-col justify-center items-center">
+        <div className="w-[20%] md:w-1/3 flex flex-col justify-center items-center">
           <NavLink
             to="/"
             className="text-[0.65rem] md:text-[1rem] tracking-[0.1em] md:tracking-[0.3em] font-medium md:font-light text-stone-900 hover:text-stone-600 transition-colors uppercase text-center"
@@ -37,9 +37,9 @@ function Navigation({ className }) {
           </NavLink>
         </div>
 
-        {/* 우측 */}
-        <div className="flex items-center justify-end space-x-2 md:space-x-8 w-1/3">
-          <NavLink to="/about" className={linkClass}>Philosophy</NavLink>
+        {/* 우측: SHOP, CART */}
+        <div className="flex items-center justify-end space-x-4 md:space-x-8 w-[40%] md:w-1/3">
+          <NavLink to="/projects" className={linkClass}>Shop</NavLink>
           <a href="#" className={linkClass}>Cart</a>
         </div>
       </div>
