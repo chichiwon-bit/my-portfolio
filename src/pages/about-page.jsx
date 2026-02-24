@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Card, CardContent } from '../components/ui/card';
+import { CometCard } from '../components/ui/comet-card';
 import profileImg from '../assets/profile.jpg';
 
 /**
@@ -23,13 +24,15 @@ function AboutPage() {
 
             {/* 프로필 사진 영역 */}
             <div className="flex-shrink-0">
-              <div className="w-44 h-44 md:w-56 md:h-56 rounded-lg overflow-hidden border border-border">
-                <img
-                  src={profileImg}
-                  alt="토곡포터리 프로필"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <CometCard rotateDepth={17.5} translateDepth={20}>
+                <div className="w-44 h-44 md:w-56 md:h-56 rounded-lg overflow-hidden border border-border shadow-md">
+                  <img
+                    src={profileImg}
+                    alt="토곡포터리 프로필"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </CometCard>
             </div>
 
             {/* 소개 내용 영역 */}
