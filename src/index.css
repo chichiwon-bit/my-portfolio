@@ -4,27 +4,27 @@
 
 @layer base {
   :root {
-    /* Terracotta & Ivory 테마 - 라이트 모드 */
-    --background: 36 50% 97%;           /* 아이보리 배경 #FAF6F0 */
-    --foreground: 24 30% 20%;           /* 따뜻한 다크 브라운 */
-    --card: 30 40% 95%;                 /* 크림색 카드 #F5EDE4 */
-    --card-foreground: 24 30% 20%;
-    --popover: 30 40% 95%;
-    --popover-foreground: 24 30% 20%;
-    --primary: 18 55% 50%;              /* 테라코타 #C2703D */
-    --primary-foreground: 36 50% 97%;
-    --secondary: 30 30% 90%;            /* 연한 베이지 */
-    --secondary-foreground: 24 30% 25%;
-    --muted: 30 25% 88%;                /* 뮤트 베이지 */
-    --muted-foreground: 24 15% 45%;
-    --accent: 24 45% 35%;               /* 진한 갈색 액센트 */
-    --accent-foreground: 36 50% 97%;
+    /* Minimal Pottery 테마 - 크림/오프화이트 */
+    --background: 39 35% 92%;           /* 크림 #F2EDE4 */
+    --foreground: 30 10% 20%;           /* 다크 스톤 */
+    --card: 39 35% 92%;                 /* 배경과 동일 (카드 없음) */
+    --card-foreground: 30 10% 20%;
+    --popover: 39 35% 92%;
+    --popover-foreground: 30 10% 20%;
+    --primary: 30 10% 20%;              /* 다크 스톤 */
+    --primary-foreground: 39 35% 92%;
+    --secondary: 39 20% 86%;
+    --secondary-foreground: 30 10% 25%;
+    --muted: 39 20% 86%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 30 10% 20%;
+    --accent-foreground: 39 35% 92%;
     --destructive: 0 65% 50%;
-    --destructive-foreground: 36 50% 97%;
-    --border: 30 25% 85%;
-    --input: 30 25% 85%;
-    --ring: 18 55% 50%;
-    --radius: 0.5rem;
+    --destructive-foreground: 39 35% 92%;
+    --border: 39 15% 80%;
+    --input: 39 15% 80%;
+    --ring: 30 10% 20%;
+    --radius: 0rem;
     --chart-1: 18 55% 50%;
     --chart-2: 30 45% 60%;
     --chart-3: 24 35% 40%;
@@ -66,10 +66,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #F2EDE4;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 }
 
@@ -92,4 +94,16 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* 마키 배너 애니메이션 */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
 }

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { cn } from '../../lib/utils';
 
 /**
  * Navigation 컴포넌트
@@ -12,36 +11,35 @@ import { cn } from '../../lib/utils';
  * <Navigation />
  */
 function Navigation({ className }) {
-  const navItems = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About Me' },
-    { to: '/projects', label: 'Projects' },
-  ];
+  const linkClass = 'text-[10px] tracking-[0.2em] font-light text-stone-600 hover:text-stone-900 transition-colors uppercase';
 
   return (
     <nav
-      className={cn(
-        'sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
-        className
-      )}
+      className={`sticky top-0 z-50 w-full border-b border-stone-300 ${className || ''}`}
+      style={{ backgroundColor: '#F2EDE4' }}
     >
-      <div className="container flex h-14 items-center justify-between mx-auto px-4">
-        <div className="font-bold text-xl text-primary">Togok Pottery</div>
-        <div className="flex items-center space-x-6">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) =>
-                cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  isActive ? 'text-foreground' : 'text-muted-foreground'
-                )
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
+      <div className="flex h-12 items-center justify-between px-6 md:px-12">
+        {/* 좌측 */}
+        <div className="flex items-center space-x-6 md:space-x-8 w-1/3">
+          <NavLink to="/projects" className={linkClass}>Shop</NavLink>
+          <NavLink to="/about" className={linkClass}>Studio</NavLink>
+        </div>
+
+        {/* 중앙 로고 */}
+        <div className="flex justify-center w-1/3">
+          <NavLink
+            to="/"
+            className="text-xs md:text-sm tracking-[0.25em] font-light text-stone-900 hover:text-stone-600 transition-colors uppercase"
+            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontSize: '1rem', letterSpacing: '0.3em' }}
+          >
+            Togok Pottery
+          </NavLink>
+        </div>
+
+        {/* 우측 */}
+        <div className="flex items-center justify-end space-x-6 md:space-x-8 w-1/3">
+          <NavLink to="/about" className={linkClass}>Philosophy</NavLink>
+          <a href="#" className={linkClass}>Cart</a>
         </div>
       </div>
     </nav>

@@ -9,6 +9,8 @@ export default {
     extend: {
       fontFamily: {
         serif: ['"Noto Serif KR"', 'Georgia', 'Cambria', 'serif'],
+        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

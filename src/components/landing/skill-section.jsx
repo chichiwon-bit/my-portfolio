@@ -1,28 +1,31 @@
 import * as React from 'react';
-import { Card, CardContent } from '../ui/card';
 
 /**
- * SkillSection 컴포넌트
+ * MarqueeBanner 컴포넌트 (skill-section)
  *
- * Props:
- * @param {string} className - 추가 CSS 클래스 [Optional]
+ * Props: 없음
  *
  * Example usage:
  * <SkillSection />
  */
-function SkillSection({ className }) {
+function SkillSection() {
+  const text = 'Ceramic Studio · Turning Visions Into Reality · TOGOK POTTERY · ';
+
   return (
-    <section className={`py-12 md:py-24 ${className || ''}`}>
-      <Card className="border-dashed">
-        <CardContent className="p-8 md:p-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-muted-foreground">
-            Skill Tree Section
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            여기는 Skill Tree 섹션입니다. 기술 스택을 트리나 프로그레스바로 시각화할 예정입니다.
-          </p>
-        </CardContent>
-      </Card>
+    <section
+      className="border-t border-b border-stone-300 py-3 overflow-hidden"
+      style={{ backgroundColor: '#F2EDE4' }}
+    >
+      <div className="overflow-hidden">
+        <div className="marquee-track">
+          <span
+            className="text-[10px] tracking-[0.2em] text-stone-500 uppercase"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            {text.repeat(10)}
+          </span>
+        </div>
+      </div>
     </section>
   );
 }
